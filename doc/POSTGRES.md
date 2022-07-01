@@ -48,7 +48,7 @@ netbox=#
 netbox=# \list
 ```
 
-<img src="../img/postgres_list_db.png" width="400px">
+<img src="../img/postgres_list_db.png" width="500px">
 
 ```
 # connect to database '\connect' or '\c'
@@ -65,7 +65,7 @@ netbox=# \list
 
 SELECT table_name,column_name,data_type FROM information_schema.columns WHERE table_name='dcim_site';
 ```
-<img src="../img/postgres_table_details.png" width="400px">
+<img src="../img/postgres_table_details.png" width="600px">
 
 ## 3. Configuration
 
@@ -126,7 +126,7 @@ In case of doubt:
 List all your container - they should be 
 docker ps -a
 ```
-<img src="../img/docker_ps.png" width="400px">
+<img src="../img/docker_ps.png" width="600px">
 
 ### 5.2 Check that your volume host(RPI)<->container were mapped correctly.
 
@@ -137,7 +137,7 @@ docker inspect netbox-db
 
 ### 5.3 Check that your container imported all needed environment variables
 
-<img src="../img/docker_inspect_netbox_db.png" width="400px">
+<img src="../img/docker_inspect_netbox_db.png" width="600px">
 
 
 If you end up here, you are a devops star!
