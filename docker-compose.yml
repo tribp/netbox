@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   netbox:
-    image: lscr.io/linuxserver/netbox:latest
+    build: .
     container_name: netbox
     depends_on:
       - netbox-cache
