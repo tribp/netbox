@@ -1,4 +1,4 @@
-<img src="./img/Redis-Logo.png" width="200px">
+<img src="../img/Redis-Logo.png" width="200px">
 
 
 ## TOC:

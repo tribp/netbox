@@ -1,0 +1,1 @@
+If no file - no dir would be created with git
