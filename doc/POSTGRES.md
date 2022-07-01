@@ -69,13 +69,7 @@ SELECT table_name,column_name,data_type FROM information_schema.columns WHERE ta
 
 ## 3. Configuration
 
-Default there is NO **redis.conf** file. Default settings will be applied, including 'requirepass no'.
-
-Custom settings can be applied via a 'redis.conf' file that is givven as a argument to **redis-server /path/to/redis.conf** when the server is started.
-
-See example: redis.conf (2281 lines :-)
-
-- line 1041 -> uncomment to set password-> 'requirepass redis123'
+All configuration is done via 'postgres.env'
 
 ## 4. Postgres and netbox on RPI
 

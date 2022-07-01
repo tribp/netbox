@@ -27,6 +27,8 @@ services:
       - ./redis.env
     networks:
       - netbox
+    command:
+      - /usr/local/etc/redis/redis.conf
     volumes:
       - ${SERVICE_DATA_DIR}/netbox-cache/data:/data
       - ${SERVICE_DATA_DIR}/netbox-cache/conf:/usr/local/etc/redis
@@ -43,7 +45,7 @@ services:
     networks:
       - netbox
     volumes:
-      - ${SERVICE_DATA_DIR}/netbox-db:/var/lib/postgresql/data
+      - ${SERVICE_DATA_DIR}/netbox-db/data:/var/lib/postgresql/data
       - /etc/passwd:/etc/passwd:ro
 
 networks:
