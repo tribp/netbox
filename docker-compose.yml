@@ -1,0 +1,51 @@
+version: "2.1"
+services:
+  netbox:
+    image: lscr.io/linuxserver/netbox:latest
+    container_name: netbox
+    depends_on:
+      - netbox-cache
+      - netbox-db
+    env_file:
+      - ./netbox.env
+    
+    networks:
+      - netbox
+    volumes:
+      - ${SERVICE_DATA_DIR}/netbox:/config
+    ports:
+      - 8001:8000
+    restart: unless-stopped
+  
+  netbox-cache:
+    container_name: netbox-cache
+    image: redis:6.2.6
+    restart: unless-stopped
+    user: ${PUID}:${PGID}
+  
+    env_file:
+      - ./redis.env
+    networks:
+      - netbox
+    volumes:
+      - ${SERVICE_DATA_DIR}/netbox-cache/data:/data
+      - ${SERVICE_DATA_DIR}/netbox-cache/conf:/usr/local/etc/redis
+
+  netbox-db:
+    container_name: netbox-db
+    image: postgres:14.0-alpine
+    restart: unless-stopped
+    user: ${PUID}:${PGID}
+      
+    env_file:
+      - ./postgres.env
+    
+    networks:
+      - netbox
+    volumes:
+      - ${SERVICE_DATA_DIR}/netbox-db:/var/lib/postgresql/data
+      - /etc/passwd:/etc/passwd:ro
+
+networks:
+  netbox:
+    name: netbox
