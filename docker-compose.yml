@@ -45,7 +45,7 @@ services:
     networks:
       - netbox
     volumes:
-      - ${SERVICE_DATA_DIR}/netbox-db/data:/var/lib/postgresql/data
+      - ${SERVICE_DATA_DIR}/netbox-db/data:/var/lib/postgresql/data/pgdata
       - /etc/passwd:/etc/passwd:ro
 
 networks:
