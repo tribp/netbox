@@ -61,7 +61,7 @@ The total "Netbox solution" consist of 3 main functionalities and we will give e
 
 <img src="./img/netbox_rpi_architecture.png" width="400px">
 
-**Remark:** If would deploy this on Azure, AWS or GCP then we would only containerize A (netbox). The B (postgres) & C (redis) functionality would be privided as a PAAS service. This way the cloud PAAS service would do the 'heavy lifting' of redundancy, upgrades, security etc.
+**Remark:** If you deploy this on Azure, AWS or GCP then we would only containerize A (netbox). The B (postgres) & C (redis) functionality would be provided as a PAAS service. This way the cloud PAAS service would do the 'heavy lifting' of redundancy, upgrades, security etc.
 
 ## 4. How to manage all your (environment) variables
 
