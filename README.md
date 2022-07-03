@@ -8,6 +8,7 @@
 - 5. Installation (TLDR;)
 - 6. Configuration details
 - 7. Troubleshooting
+- 8. TLDR; goto [./doc/TLDR.md](installation)
 
 ## 1. What is Netbox?
 

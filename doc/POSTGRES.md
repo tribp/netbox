@@ -4,7 +4,7 @@
 ## TOC:
 - 1. What is Postgres?
 - 2. Usefull commands
-- 3. Configuration
+- 3. Configuration & File permissions !
 - 4. Postgres and Netbox
 - 5. troubleshooting
 
@@ -67,9 +67,45 @@ SELECT table_name,column_name,data_type FROM information_schema.columns WHERE ta
 ```
 <img src="../img/postgres_table_details.png" width="600px">
 
-## 3. Configuration
+## 3. Configuration & File permissions !
 
-All configuration is done via 'postgres.env'
+**Very Important !!!**
+
+To obtain persistent storage we will map a directory of our host (RPI) to the postgres data directory. This is done in the docker-compose file.
+
+```
+volumes:
+   - /myDataDirectoryPathOnMyPI:/var/lib/postgresql/data
+```
+
+This is the most **TRICKY** part of the intstallation of netbox (or postgres) on a RPI !!!
+
+The problem arises from te fact that, typically, docker-compose is run with the user 'pi' **BUT** inside the postgres container 'initDB' is launched as 'root' and results that 'pi' will have no permissions on the postgress data of the mapped volume
+
+**To solve this:**
+  1. create the path on the host before docker-compose is launched
+
+```
+# in your netbox home dir on your pi - create 'netbox-db
+~/netbox $mkdir netbox-db
+~/netbox/netbox-db $
+
+# create your data dir that will be mapped
+~/netbox/netbox-db $mkdir data
+~/netbox/netbox-db/data $
+```
+
+  2. Set the **EXCACTLY** these permissions for 'pi' and **NO different!**
+
+```
+# !! the most important !! apply the correct permissions
+~/netbox/netbox-db$chmod 700 data
+```
+   
+The result should look something like this:
+
+<img src="../img/postgres_file_permissions.png" width="400px">
+
 
 ## 4. Postgres and netbox on RPI
 
@@ -133,5 +169,8 @@ docker inspect netbox-db
 
 <img src="../img/docker_inspect_netbox_db.png" width="600px">
 
+### 5.4 Check the persissions of the mapped data volume on your host
+
+**See 3. !!!!**
 
 If you end up here, you are a devops star!

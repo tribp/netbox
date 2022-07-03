@@ -45,11 +45,10 @@ services:
     networks:
       - netbox
     volumes:
-      - netbox-data:/var/lib/postgresql/data
+      - ${SERVICE_DATA_DIR}/netbox-db/data:/var/lib/postgresql/data
       - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
 
 networks:
   netbox:
     name: netbox
-volumes:
-  netbox-data
