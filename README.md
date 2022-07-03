@@ -25,7 +25,12 @@ NetBox is a fully open-sourced platform for modern network automation and infras
 
 It has a **feature rich API** build upon a 'DJANGO framework' what makes it extremely suitable for optional automation and integration of other operational systems like monitoring, ticketing etc
 
-Resulting in the benefit of a ***"single pane of glass" and "single source of truth"***
+| :trophy: Benefits          |
+|:---------------------------|
+| Single pane of glass |
+| Single source of truth |
+
+
 
 **Ref:** [see live demo on www](https://demo.netbox.dev/)
 
