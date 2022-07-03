@@ -62,10 +62,12 @@ This should be the exact result!
 ~/netbox/docker-compose up
 ```
 
+> Note: It can take 2-3 minutes the first time to create and prepare 
+
 ### Step 5: Goto netbox with your browser
 
 We configures port '8001', but you can change this in 'docker-compose.yml'
 
 Launch: ***'http://your_RPI_IP:8001'***
 
-<img src="../img/netbox_home_screen.png" width="300px"> add
+<img src="../img/netbox_home_screen.png" width="600px">

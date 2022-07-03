@@ -1,7 +1,7 @@
 <img src="./img/netbox.png" width="200px">
 
 ## TOC:
-  0. TLDR; goto [./doc/TLDR.md](installation)
+  0. TLDR; goto [installation](./doc/TLDR.md)
   1. What is Netbox?
   2. Architecture
   3. Netbox on RPI
@@ -9,7 +9,6 @@
   5. Installation (TLDR;)
   6. Configuration details
   7. Troubleshooting
-  8. TLDR; goto [./doc/TLDR.md](installation)
 
 ## 1. What is Netbox?
 
