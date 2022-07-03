@@ -70,4 +70,8 @@ We configures port '8001', but you can change this in 'docker-compose.yml'
 
 Launch: ***'http://your_RPI_IP:8001'***
 
+> Note: first time login: <BR/>
+> user: 'admin' <BR/>
+> password: 'admin'
+
 <img src="../img/netbox_home_screen.png" width="600px">
