@@ -1,7 +1,7 @@
 <img src="./img/netbox.png" width="200px">
 
 ## TOC:
-  0. TLDR; goto [installation](./doc/TLDR.md)
+  0. TLDR - goto [installation](./doc/TLDR.md)
   1. What is Netbox?
   2. Architecture
   3. Netbox on RPI
@@ -86,41 +86,11 @@ netbox
 
 ## 5. Installation on RPI
 
-### 5.1 Creating the directory structure
-
-Create a dir structure on your pi:
-```
-# make sure to be in your home dir of user 'pi' (/home/pi)
-cd ~
-~/
-
-# Create dir structure with 'mkdir'
-
-~/netbox
-  |--.env
-  |--docker-compose.yml
-  |--Dockerfile
-  |--netbox.env
-  |--postgres.env
-  |--redis.env
-    |--netbox/ -->
-    |--netbox-cache/
-    |--netbox-db
-
-```
-
-
-### 5.2 Copy configuration files
-
-### 5.3 Check before launch
-
-### 5.4 Start it up
+[How to install on RPI](./doc/TLDR.md)
 
 ## 6. Configuration details
 
-```
-docker-compose up
-```
+Here you find some extra info about Redis and Postgres and how to configure and test  both containers without launching the total netbox solution.
 
 ## 6.1 Detail configuration Redis
 
