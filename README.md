@@ -1,14 +1,15 @@
 <img src="./img/netbox.png" width="200px">
 
 ## TOC:
-- 1. What is Netbox?
-- 2. Architecture
-- 3. Netbox on RPI
-- 4. How to manage all your (environment) variables
-- 5. Installation (TLDR;)
-- 6. Configuration details
-- 7. Troubleshooting
-- 8. TLDR; goto [./doc/TLDR.md](installation)
+  0. TLDR; goto [./doc/TLDR.md](installation)
+  1. What is Netbox?
+  2. Architecture
+  3. Netbox on RPI
+  4. How to manage all your (environment) variables
+  5. Installation (TLDR;)
+  6. Configuration details
+  7. Troubleshooting
+  8. TLDR; goto [./doc/TLDR.md](installation)
 
 ## 1. What is Netbox?
 
