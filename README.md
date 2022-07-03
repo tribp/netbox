@@ -85,7 +85,7 @@ echo $POSTGRES_USER
 netbox
 ```
 
-**Important:** Varibles defined under the key 'environment' will take precedence over those defined in the file under 'env_file:'. Best practise is not to use both keys at the same time in order to avoid mistakes. 
+**Important:** Varibles defined under the key 'environment' will take precedence over those defined in the file under 'env_file:'. Best practice is not to use both keys at the same time in order to avoid mistakes. 
 
 <img src="./img/variable_injection.png" width="600px">
 
@@ -111,7 +111,7 @@ Here you find some extra info about Redis and Postgres and how to configure and 
 
 Whenever you experiencee problems, start by making sure that your redis(netbox-cache) and postgres(netbox-db) is working properly.
 
-Start only that server from the compose file that you want to test and then perform all checks as described in 5.1 or 5.2
+Start only that server from the compose file that you want to test and then perform all checks as described in 6.1 or 6.2
 
 ```
 # This will only start the redis container

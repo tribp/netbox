@@ -68,7 +68,7 @@ Be patient :clock10:
 
 ### Step 5: Goto netbox with your browser
 
-We configures port '8001', but you can change this in 'docker-compose.yml'
+We configured port '8001', but you can change this in 'docker-compose.yml'
 
 Launch: ***'http://your_RPI_IP:8001'***
 
