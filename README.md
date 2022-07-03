@@ -6,7 +6,7 @@
   2. Architecture
   3. Netbox on RPI
   4. How to manage all your (environment) variables
-  5. Installation (TLDR;)
+  5. Installation
   6. Configuration details
   7. Troubleshooting
 
@@ -84,7 +84,7 @@ netbox
 
 <img src="./img/variable_injection.png" width="600px">
 
-## 5. Installation on RPI
+## 5. Installation
 
 [How to install on RPI](./doc/TLDR.md)
 

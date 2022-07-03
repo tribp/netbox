@@ -58,11 +58,13 @@ This should be the exact result!
 ```
 
 ```
-# Lauch with docker-compose
-~/netbox/docker-compose up
+# Lauch with docker-compose (-d = in background - detached)
+~/netbox/docker-compose up -d
 ```
 
-> Note: It can take 2-3 minutes the first time to create and prepare 
+> **Note:** It can take 3-4 minutes the first time to create and prepare the database and total netbox application !!!
+
+Be patient :clock10:
 
 ### Step 5: Goto netbox with your browser
 
