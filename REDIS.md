@@ -1,13 +1,14 @@
 
-<img src="./img/Postgres-Logo.png" width="200px">
-# Postgres
+<img src="./img/Redis-Logo.png" width="200px">
+
+# Redis
 
 TOC:
-- 1. What is Postgres?
+- 1. What is Redis?
 - 2. Usefull commands
 - 3. Configuration
-- 4. Postgres and Netbox
-- 5. Check your postgres for netbox
+- 4. Redis and Netbox
+- 5. Check your redis for netbox
 
 ## 1. What is Redis?
 
@@ -42,11 +43,11 @@ $ redis-cli
 ```
 
 ```
-# check password (deafult case where no password is set in redis.conf)
+# check password
 127.0.0.1:6379> AUTH
 ok
 
-# set password - (for the default user 'default)
+# set password 
 127.0.0.1:6379> CONFIG SET requirepass "redis123"
 
 # check
@@ -117,4 +118,3 @@ ok
 ```
 
 If you end up here, you are a devops star!
-
