@@ -12,7 +12,7 @@ services:
     networks:
       - netbox
     volumes:
-      - ${SERVICE_DATA_DIR}/netbox:/config
+      - ${SERVICE_DATA_DIR}/netbox/config:/config
     ports:
       - 8001:8000
     restart: unless-stopped
