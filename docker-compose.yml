@@ -1,54 +1,55 @@
-version: "2.1"
+version: "3.4"
 services:
   netbox:
     build: .
     container_name: netbox
+    restart: unless-stopped
     depends_on:
       - netbox-cache
       - netbox-db
+    links:
+      - netbox-db:netbox-db
+      - netbox-cache:netbox-cache
     env_file:
       - ./netbox.env
     
-    networks:
-      - netbox
     volumes:
-      - ${SERVICE_DATA_DIR}/netbox/config:/config
+      - ./reports:/app/netbox/netbox/reports
+      - ./scripts:/app/netbox/scripts
+      - netbox-media-files:/app/netbox/netbox/media
+    healthcheck:
+      start_period: 60s
+      timeout: 3s
+      interval: 15s
+      test: "curl -f http://localhost:8080/api/ || exit 1"
     ports:
       - 8001:8000
-    restart: unless-stopped
   
   netbox-cache:
     container_name: netbox-cache
     image: redis:6.2.6
     restart: unless-stopped
-    user: ${PUID}:${PGID}
-  
     env_file:
       - ./redis.env
-    networks:
-      - netbox
     command:
       - /usr/local/etc/redis/redis.conf
     volumes:
-      - ${SERVICE_DATA_DIR}/netbox-cache/data:/data
-      - ${SERVICE_DATA_DIR}/netbox-cache/conf:/usr/local/etc/redis
+      - ./netbox-cache/conf:/usr/local/etc/redis
+      - netbox-redis-data:/app/netbox-redis-data
 
   netbox-db:
     container_name: netbox-db
-    image: postgres:14.0-alpine
+    image: postgres:15.0-alpine
     restart: unless-stopped
-    user: ${PUID}:${PGID}
-      
     env_file:
       - ./postgres.env
-    
-    networks:
-      - netbox
     volumes:
-      - ${SERVICE_DATA_DIR}/netbox-db/data:/var/lib/postgresql/data
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
+      - netbox-postgres-data:/var/lib/postgresql/data
 
-networks:
-  netbox:
-    name: netbox
+volumes:
+  netbox-media-files:
+    driver: local
+  netbox-postgres-data:
+    driver: local
+  netbox-redis-data:
+    driver: local
